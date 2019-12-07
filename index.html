@@ -2,121 +2,167 @@
 <html>
   <head>
     <!--Let browser know website is optimized for mobile-->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <!-- Import Google Fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Special+Elite&display=swap" rel="stylesheet">
+    <link
+      href="https://fonts.googleapis.com/css?family=Special+Elite&display=swap"
+      rel="stylesheet"
+    />
     <!--Import Google Icon Font-->
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
     <!--Import materialize.css-->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+    />
     <!-- Link to our css file -->
-    <link rel="stylesheet" href="style.css">
-    
+    <link rel="stylesheet" href="style.css" />
+
     <title>Beer Here with Materialize</title>
   </head>
   <body>
-      <!-- Header -->
-      <div class="card large">
-          <div class="image">
-              <img src="https://www.historycolorado.org/sites/default/files/styles/7to4_721x412/public/media/images/2019/Beer%20Here%20hero-01_0.jpg?itok=nWPUk3e_" alt="" class="responsive-img align-center" alt="">
-          </div>
-          <div class="card-content">
-              <p>Three Cheers for Beer Here!</p>
-          </div>
+    <!-- Header -->
+    <div class="card large">
+      <div class="image">
+        <img
+          src="https://www.historycolorado.org/sites/default/files/styles/7to4_721x412/public/media/images/2019/Beer%20Here%20hero-01_0.jpg?itok=nWPUk3e_"
+          alt=""
+          class="responsive-img align-center"
+          alt=""
+        />
       </div>
-      <!-- Search area -->
-      <div class="container">
-          <div class="row">
-              <div class="col s4">
-                  <textarea id="textarea" class="materialize-textarea" data-length="50"></textarea>
-                      <label class="active" for="textarea">City</label>
-              </div>
-              <button class="dropdown-trigger btn waves-effect waves-light" href="#" data-target="dropdown1">State
-                  <i class="material-icons right">arrow_drop_down</i>
-                  <!-- Dropdown Structure -->
-                  <ul id='dropdown1' class='dropdown-content'>
-                      <li><a href="#!">CO</a></li>
-                      <li><a href="#!">CA</a></li>
-                      <li><a href="#!">NY</a></li>
-                  </ul>
-              </button>
-              <!-- Send button -->
-              <button class="btn waves-effect waves-light" type="submit" name="action">Find Beer Now
-                  <i class="material-icons right">local_drink</i>
-              </button>
-          </div>
+      <div class="card-content">
+        <p>Three Cheers for Beer Here!</p>
       </div>
-     <div id="map"></div>
-      <!-- ICON LIST -->
-      <div class="container">
-          <ul class="collection">
-              <li class="collection-item avatar">
-                  <i class="material-icons circle">local_drink</i>
-                  <span class="title">Brewery Name</span>
-                  <p>Rating <br>
-                      Brewery Address
-                      City, State, Zip
-                      Phone Number 
-                  </p>
-                  <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
-              </li>
-              <li class="collection-item avatar">
-                  <i class="material-icons circle green">local_drink</i>
-                  <span class="title">Brewery Name</span>
-                  <p>Rating <br>
-                      Brewery Address
-                      City, State, Zip
-                      Phone Number 
-                  </p>
-                  <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
-              </li>
-              <li class="collection-item avatar">
-                  <i class="material-icons circle red">local_drink</i>
-                  <span class="title">Brewery Name</span>
-                  <p>Rating <br>
-                      Brewery Address
-                      City, State, Zip
-                      Phone Number 
-                  </p>
-                  <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
-              </li>
+    </div>
+    <!-- Search area -->
+    <div class="container">
+      <div class="row">
+        <div class="col s4">
+          <textarea
+            id="textarea"
+            class="materialize-textarea"
+            data-length="50"
+          ></textarea>
+          <label class="active" for="textarea">City</label>
+        </div>
+        <button
+          class="dropdown-trigger btn waves-effect waves-light"
+          href="#"
+          data-target="dropdown1"
+        >
+          State
+          <i class="material-icons right">arrow_drop_down</i>
+          <!-- Dropdown Structure -->
+          <ul id="dropdown1" class="dropdown-content">
+            <li><a href="#!">CO</a></li>
+            <li><a href="#!">CA</a></li>
+            <li><a href="#!">NY</a></li>
           </ul>
+        </button>
+        <!-- Send button -->
+        <button
+          class="btn waves-effect waves-light"
+          type="submit"
+          name="action"
+        >
+          Find Beer Now
+          <i class="material-icons right">local_drink</i>
+        </button>
       </div>
-      <!-- banner -->
-      <div class="container">
-              <img src="https://images.askmen.com/1080x540/2019/03/26-052442-man_goes_on_beer_only_diet_loses_25_pounds.jpg" alt="" class="responsive-img" alt="">
-          </div>
-      <!-- Footer -->
-      <!-- add cool fonts -->
-      <!-- add contact -->
-      <div class="card horizontal">
-              <div class="card-image">
-                  <img src="https://pbs.twimg.com/profile_images/857899824481435649/PrVYolGS_400x400.jpg">
-              </div>
-              <div class="card-stacked">
-                  <div class="card-content">
-                      <h1 class="beerHere">Beer Here</h1>
-                      <p></p>
-                  </div>
-                  <div class="card-action">
-                      <a href="#">This is a link</a>
-                  </div>
-              </div>
-          </div>
-  <!--JavaScript at end of body for optimized loading-->
-       <script src="script.js"></script>
+    </div>
+    <div id="map"></div>
+    <!-- ICON LIST -->
+    <div class="container">
+      <div id="search-results">
+        <!--Search results from api query should show here-->
+      </div>
+      <ul class="collection">
+        <li class="collection-item avatar">
+          <i class="material-icons circle">local_drink</i>
+          <span class="title">Brewery Name</span>
+          <p>
+            Rating <br />
+            Brewery Address City, State, Zip Phone Number
+          </p>
+          <a href="#!" class="secondary-content"
+            ><i class="material-icons">grade</i></a
+          >
+        </li>
+        <li class="collection-item avatar">
+          <i class="material-icons circle green">local_drink</i>
+          <span class="title">Brewery Name</span>
+          <p>
+            Rating <br />
+            Brewery Address City, State, Zip Phone Number
+          </p>
+          <a href="#!" class="secondary-content"
+            ><i class="material-icons">grade</i></a
+          >
+        </li>
+        <li class="collection-item avatar">
+          <i class="material-icons circle red">local_drink</i>
+          <span class="title">Brewery Name</span>
+          <p>
+            Rating <br />
+            Brewery Address City, State, Zip Phone Number
+          </p>
+          <a href="#!" class="secondary-content"
+            ><i class="material-icons">grade</i></a
+          >
+        </li>
+      </ul>
+    </div>
+    <!-- banner -->
+    <div class="container">
+      <img
+        src="https://images.askmen.com/1080x540/2019/03/26-052442-man_goes_on_beer_only_diet_loses_25_pounds.jpg"
+        alt=""
+        class="responsive-img"
+        alt=""
+      />
+    </div>
+    <!-- Footer -->
+    <!-- add cool fonts -->
+    <!-- add contact -->
+    <div class="card horizontal">
+      <div class="card-image">
+        <img
+          src="https://pbs.twimg.com/profile_images/857899824481435649/PrVYolGS_400x400.jpg"
+        />
+      </div>
+      <div class="card-stacked">
+        <div class="card-content">
+          <h1 class="beerHere">Beer Here</h1>
+          <p></p>
+        </div>
+        <div class="card-action">
+          <a href="#">This is a link</a>
+        </div>
+      </div>
+    </div>
+    <!--JavaScript at end of body for optimized loading-->
+    <script src="script.js"></script>
     <script
       async
       defer
       src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAVbuVniitJyp6JVbYyfKZjhfj6gLKGKzY&callback=initMap"
     ></script>
-  <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-  <script type="text/javascript" src="script.js"></script>
-  <script>
-  M.AutoInit();
-  </script>
-</body>
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.min.js"
+      integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script type="text/javascript" src="script.js"></script>
+    <script type="text/javascript" src="logic.js"></script>
+    <script>
+      M.AutoInit();
+    </script>
+  </body>
 </html>
