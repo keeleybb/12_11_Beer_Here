@@ -1,5 +1,10 @@
+
 .beerHere {
     font-family:'Special Elite', cursive;
 }
-.nav-wrapper {
+
+#map {
+  height: 400px;
+  width: 50%;
+  margin: auto;
 }
