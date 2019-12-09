@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <!-- Import Google Fonts -->
     <link
-      href="https://fonts.googleapis.com/css?family=Special+Elite&display=swap"
+      href="https://fonts.googleapis.com/css?family=DM+Serif+Display|Special+Elite&display=swap"
       rel="stylesheet"
     />
     <!--Import Google Icon Font-->
@@ -27,44 +27,106 @@
   </head>
   <body>
     <!-- Header -->
-    <div class="card large">
-      <div class="image">
-        <img
-          src="https://www.historycolorado.org/sites/default/files/styles/7to4_721x412/public/media/images/2019/Beer%20Here%20hero-01_0.jpg?itok=nWPUk3e_"
-          alt=""
-          class="responsive-img align-center"
-          alt=""
-        />
-      </div>
-      <div class="card-content align-center">
-        <p>Three Cheers for Beer Here!</p>
-      </div>
+    <div class="slider">
+      <ul class="slides">
+        <li>
+          <img src="beerVariety.jpg"> 
+          <div class="caption center-align">
+            <h2>Find your new favorite brewery</h2>
+          </div>
+        </li>
+        <li>
+          <img src="beerIsFun.jpg"> 
+          <div class="caption right-align">
+            <h2>Friendship goes better with beer</h2>
+          </div>
+        </li>
+        <li>
+          <img src="niceBeer.jpg">
+          <div class="caption center-align">
+            <h2>Craft beer in your neighborhood</h2>
+          </div>
+        </li>
+        <li>
+          <img src="glassMug.jpg"> 
+          <div class="caption right-align">
+            <h2>Three Cheers for Beer Here!</h2>
+          </div>
+        </li>
+      </ul>
     </div>
+    <!-- Card panel to make space between header and search -->
+    <div class="card-panel">
+      <span class="white-text">Enter your city or state and click "Find Beer Now" to begin your search
+      </span>
+  </div>
     <!-- Search area -->
-    <div class="container">
-      <div class="row">
-        <div class="col s4">
-          <textarea
-            id="textarea"
-            class="materialize-textarea"
-            data-length="50"
-          ></textarea>
-          <label class="active" for="textarea">City</label>
-        </div>
-        <button
-          class="dropdown-trigger btn waves-effect waves-light"
-          href="#"
-          data-target="dropdown1"
-        >
-          State
-          <i class="material-icons right">arrow_drop_down</i>
-          <!-- Dropdown Structure -->
-          <ul id="dropdown1" class="dropdown-content">
-            <li><a href="#!">CO</a></li>
-            <li><a href="#!">CA</a></li>
-            <li><a href="#!">NY</a></li>
-          </ul>
-        </button>
+    <div class="container" id="search">
+      <div class="col s6">
+        <div class="row">
+          <div class="input-field col m4">
+            <input id="name" type="text">
+            <label for="name">City</label>
+          </div>
+      </div>
+      <!-- Select State dropdown -->
+      <div class="input-field col m4" id="state">
+        <select>
+          <option value="" disabled selected>Select your state</option>
+          <option value="1">Alabama</option>
+          <option value="2">Alaska</option>
+          <option value="3">Arizona</option>
+          <option value="4">Arkansas</option>
+          <option value="5">California</option>
+          <option value="6">Colorado</option>
+          <option value="7">Connecticut</option>
+          <option value="8">Delaware</option>
+          <option value="9">Florida</option>
+          <option value="10">Georgia</option>
+          <option value="11">Hawaii</option>
+          <option value="12">Idaho</option>
+          <option value="13">Illinois</option>
+          <option value="14">Indiana</option>
+          <option value="15">Iowa</option>
+          <option value="16">Kansas</option>
+          <option value="17">Kentucky</option>
+          <option value="18">Louisiana</option>
+          <option value="19">Maine</option>
+          <option value="20">Maryland</option>
+          <option value="21">Massachusetts</option>
+          <option value="22">Michigan</option>
+          <option value="23">Minnesota</option>
+          <option value="24">Mississippi</option>
+          <option value="25">Missouri</option>
+          <option value="26">Montana</option>
+          <option value="27">Nebraska</option>
+          <option value="28">Nevada</option>
+          <option value="29">New Hampshire</option>
+          <option value="30">New Jersey</option>
+          <option value="31">New Mexico</option>
+          <option value="32">New York</option>
+          <option value="33">North Carolina</option>
+          <option value="34">North Dakota</option>
+          <option value="35">Ohio</option>
+          <option value="36">Oklahoma</option>
+          <option value="37">Oregon</option>
+          <option value="38">Pennsylvania</option>
+          <option value="39">Rhode Island</option>
+          <option value="40">South Carolina</option>
+          <option value="41">South Dakota</option>
+          <option value="42">Tennessee</option>
+          <option value="43">Texas</option>
+          <option value="44">Utah</option>
+          <option value="45">Vermont</option>
+          <option value="46">Virginia</option>
+          <option value="47">Washington</option>
+          <option value="48">West Virginia</option>
+          <option value="49">Wisconsin</option>
+          <option value="50">Wyoming</option>
+        </select>
+        <label>State</label>
+      </div>  
+    </div>  
         <!-- Send button -->
         <button
           class="btn waves-effect waves-light"
@@ -76,6 +138,7 @@
         </button>
       </div>
     </div>
+    <!-- Map -->
     <div id="map"></div>
     <!-- ICON LIST -->
     <div class="container">
@@ -118,18 +181,10 @@
         </li>
       </ul>
     </div>
-    <!-- banner -->
-    <div class="container">
-      <img
-        src="https://images.askmen.com/1080x540/2019/03/26-052442-man_goes_on_beer_only_diet_loses_25_pounds.jpg"
-        alt=""
-        class="responsive-img"
-        alt=""
-      />
+    <!-- Card panel to indicate footer begin -->
+    <div class="card-panel">
     </div>
     <!-- Footer -->
-    <!-- add cool fonts -->
-    <!-- add contact -->
     <div class="card horizontal">
       <div class="card-image">
         <img
@@ -139,10 +194,12 @@
       <div class="card-stacked">
         <div class="card-content">
           <h1 class="beerHere">Beer Here</h1>
-          <p></p>
+          <p>This has been a group project brought to you by <em>(in alphabetical order)</em> Heidi, Keeley, and Mel.</p>
+            <br><br>
+            <p2>Cheers!</p2>
         </div>
         <div class="card-action">
-          <a href="#">This is a link</a>
+          <a href="mailto:donotcontact@google.com">Contact us</a>
         </div>
       </div>
     </div>
