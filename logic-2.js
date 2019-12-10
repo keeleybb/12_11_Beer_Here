@@ -1,16 +1,10 @@
 var state;
 var breweries = [];
 
-var $loading = $("#loadingDiv").hide();
-$(document)
-  .ajaxStart(function() {
-    $loading.show();
-  })
-  .ajaxStop(function() {
-    $loading.hide();
-  });
+var $loading = $("#loading").hide();
 
 function searchKickOff(city) {
+  $loading.show();
   //Start getting Data from OpenDB
   var queryURL =
     "https://api.openbrewerydb.org/breweries?by_city=" +
@@ -92,15 +86,17 @@ function searchKickOff(city) {
       };
       // The map, centered at Uluru
       map = new google.maps.Map(document.getElementById("map"), {
-        zoom: 12,
+        zoom: 10,
         center: point
       });
+
       // The marker, positioned at Uluru
       var marker = new google.maps.Marker({ position: point, map: map });
 
       // console.log(breweries);
       //Send breweries to be added to page
       breweries.map(callPage);
+      $loading.hide();
       //End
     } else {
       //Add to search results to page
