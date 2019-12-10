@@ -11,16 +11,13 @@ $(document)
   });
 
 function searchKickOff(city) {
-  //Set city and state equal to whatever is returned from search
-  //Set off google map to go to that location
-  //Recenter the map??
   //Start getting Data from OpenDB
   var queryURL =
     "https://api.openbrewerydb.org/breweries?by_city=" +
     city +
     "&by_state=" +
     state +
-    "&page=1&per_page=50";
+    "&page=1&per_page=10";
   $.ajax({
     url: queryURL,
     method: "GET"
@@ -86,12 +83,33 @@ function searchKickOff(city) {
       breweries.sort(function compareNumbers(a, b) {
         return b.googleBreweryRating - a.googleBreweryRating;
       });
+      console.log(breweries[0].breweryLat);
+      console.log(breweries[0].breweryLon);
+      // The location of Uluru
+      var point = {
+        lat: parseFloat(breweries[0].breweryLat),
+        lng: parseFloat(breweries[0].breweryLon)
+      };
+      // The map, centered at Uluru
+      map = new google.maps.Map(document.getElementById("map"), {
+        zoom: 12,
+        center: point
+      });
+      // The marker, positioned at Uluru
+      var marker = new google.maps.Marker({ position: point, map: map });
+
       // console.log(breweries);
       //Send breweries to be added to page
       breweries.map(callPage);
       //End
     } else {
-      alert("Try Another City");
+      //Add to search results to page
+      var error = $("<li>").html(
+        '<i class="material-icons circle red">local_drink</i><p class="red" style="font-size: 30px; padding-top-10px;">No Beer Here! Try Another City</p>'
+      );
+      $(error).attr("class", "collection-item avatar");
+
+      $("#search-results").append(error);
     }
   });
 }
@@ -115,9 +133,9 @@ function callPage({
       googleBreweryAddress +
       "<br />" +
       formattedPhone +
-      '</p><a href="#!" class="secondary-content" style="text-align: center;"><i class="material-icons">grade</i><br>' +
+      '</p><p class="secondary-content" style="text-align: center;"><i class="material-icons">grade</i><br>' +
       googleBreweryRating +
-      "</a>"
+      "</p>"
   );
   $(breweryp).attr("class", "collection-item avatar");
 
@@ -149,4 +167,8 @@ $("#state-option").on("change", function(e) {
   // console.log(e.target.options[e.target.selectedIndex].text);
   state = e.target.options[e.target.selectedIndex].text;
   console.log(state, "State Var");
+});
+
+$(document).ready(function() {
+  $(".slider").slider();
 });
