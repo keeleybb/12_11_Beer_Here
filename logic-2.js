@@ -16,9 +16,9 @@ function searchKickOff(city) {
     url: queryURL,
     method: "GET"
   }).then(async function(response) {
-    console.log(city);
-    console.log(queryURL);
-    console.log("Open DB Data: ", response);
+    // console.log(city);
+    // console.log(queryURL);
+    // console.log("Open DB Data: ", response);
     //Error handling needs to happen here.
     for (i = 0; i < response.length; i++) {
       if (
@@ -29,16 +29,6 @@ function searchKickOff(city) {
         var breweryLat = response[i].latitude;
         var breweryLon = response[i].longitude;
         var breweryPhone = response[i].phone;
-        if (breweryPhone > 0) {
-          var formattedPhone =
-            breweryPhone.substr(0, 3) +
-            "-" +
-            breweryPhone.substr(3, 3) +
-            "-" +
-            breweryPhone.substr(6, 4);
-        } else {
-          formattedPhone = "No phone number";
-        }
 
         //AJAX QUERY FOR GOOGLE
         var queryURLGoogle =
@@ -58,7 +48,16 @@ function searchKickOff(city) {
         var googleBreweryAddress = a.candidates[0].formatted_address;
         var googleBreweryRating = a.candidates[0].rating;
         // console.log(a);
-
+        if (breweryPhone > 0) {
+          var formattedPhone =
+            breweryPhone.substr(0, 3) +
+            "-" +
+            breweryPhone.substr(3, 3) +
+            "-" +
+            breweryPhone.substr(6, 4);
+        } else {
+          formattedPhone = "No phone number";
+        }
         var brewery = {
           breweryName: breweryName,
           breweryLat: breweryLat,
@@ -95,13 +94,15 @@ function searchKickOff(city) {
 
       // console.log(breweries);
       //Send breweries to be added to page
+      $("#search-results").empty();
       breweries.map(callPage);
       $loading.hide();
       //End
     } else {
       //Add to search results to page
+      $loading.hide();
       var error = $("<li>").html(
-        '<i class="material-icons circle red">local_drink</i><p class="red" style="font-size: 30px; padding-top-10px;">No Beer Here! Try Another City</p>'
+        '<i class="material-icons circle red">local_drink</i><p style="color:red; font-size: 30px; padding-top-10px;">No Beer Here! Try Another City</p>'
       );
       $(error).attr("class", "collection-item avatar");
 
